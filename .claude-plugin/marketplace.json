@@ -9,7 +9,7 @@
       "name": "prompt-flow",
       "source": "./plugins/prompt-flow",
       "description": "Turn a rough idea into a master prompt and a plan, make quick small changes, and hand off cleanly between chats.",
-      "version": "0.1.0"
+      "version": "0.2.0"
     }
   ]
 }

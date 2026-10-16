@@ -2,7 +2,7 @@
 
 A tiny Claude Code plugin for a workflow that gets better results and uses fewer tokens:
 
-1. **Talk** your idea into ChatGPT and let it write a detailed master prompt.
+1. **Talk** about your idea and turn it into a detailed master prompt, right inside Claude (or in ChatGPT, if you prefer).
 2. **Plan** it in Claude Code's plan mode before any code is written.
 3. **Build** it in auto mode once the plan looks right.
 4. **Hand off** to a fresh chat after each big project.
@@ -24,16 +24,19 @@ Then restart Claude Code. To get updates later, run `/plugin marketplace update 
 
 | When | Run | What happens |
 |---|---|---|
-| Starting something big (new feature, first build, rework) | `/prompt-flow:master-prompt <paste prompt>` | Cleans up the prompt into Goal / Features / Constraints / Out of scope / Done when, saves it to `docs/prompts/`, switches to plan mode and plans. Approve the plan, switch to auto mode, done. |
+| Starting something big, all in Claude | `/prompt-flow:idea <just talk>` | Asks you a few clickable questions, writes the master prompt and saves it to `docs/prompts/`. Reply **go** and it plans in plan mode. The interview runs on Sonnet to save usage; planning and building use your normal model. |
+| Starting something big, prompt from ChatGPT | `/prompt-flow:master-prompt <paste prompt>` | Cleans up the prompt into Goal / Features / Constraints / Out of scope / Done when, saves it to `docs/prompts/`, switches to plan mode and plans. Approve the plan, switch to auto mode, done. |
 | A small change | `/prompt-flow:quick <what to change>` | No planning. Smallest possible change, quick check, 2-3 line report. Stops and tells you if it's bigger than it looks. |
 | Finished a big piece of work | `/prompt-flow:handoff` | Writes `HANDOFF.md`: what was done, decisions, what's open, next steps, how to run it. |
 | Starting the new chat | `/prompt-flow:resume` | Reads `HANDOFF.md` and tells you where things stand in a few lines. |
 
-## The ChatGPT side
+## Stay in Claude
 
-Set up a ChatGPT Project with the instructions in [`chatgpt/prompt-builder.md`](chatgpt/prompt-builder.md). Then you just open it, talk, answer its few questions, and copy the prompt it gives you.
+Type `/prompt-flow:idea `, then just talk: press **Win+H** on Windows (or **Fn Fn** on Mac) to dictate into Claude's input box. Ramble as much as you like. Claude reads it, asks a few multiple-choice questions you can click (or type your own answer), and writes the master prompt for you.
 
-No ChatGPT? You can also skip it: dictate straight into Claude Code with your system's dictation (**Win+H** on Windows, **Fn Fn** on Mac) after `/prompt-flow:master-prompt`. The command cleans up a messy ramble too. That uses a bit more Claude usage than letting ChatGPT do the cleanup.
+## Or use ChatGPT for the interview
+
+If you want the interview to cost zero Claude usage, set up a ChatGPT Project with the instructions in [`chatgpt/prompt-builder.md`](chatgpt/prompt-builder.md). Open it, talk, answer its questions, and paste the prompt it gives you after `/prompt-flow:master-prompt`.
 
 ## Tips
 

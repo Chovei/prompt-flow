@@ -13,7 +13,9 @@ The user wants to start a big piece of work (a new feature, a first implementati
 $ARGUMENTS
 </input>
 
-If the input is empty, ask the user to paste their master prompt (or just describe what they want) and stop.
+If the input is empty, ask the user to paste their master prompt (or just describe what they want) and stop. If they'd rather talk it through, suggest `/prompt-flow:idea` instead.
+
+If the input is a path to an existing `.md` file (for example one saved by `/prompt-flow:idea` in `docs/prompts/`), read that file and use its contents as the input. It's already saved, so skip step 2's saving.
 
 ## 1. Shape the prompt
 
