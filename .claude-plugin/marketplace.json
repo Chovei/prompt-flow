@@ -1,0 +1,15 @@
+{
+  "name": "prompt-flow",
+  "owner": { "name": "Chovei" },
+  "metadata": {
+    "description": "A simple workflow for Claude Code: master prompt, plan, build, hand off."
+  },
+  "plugins": [
+    {
+      "name": "prompt-flow",
+      "source": "./plugins/prompt-flow",
+      "description": "Turn a rough idea into a master prompt and a plan, make quick small changes, and hand off cleanly between chats.",
+      "version": "0.1.0"
+    }
+  ]
+}
